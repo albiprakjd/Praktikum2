@@ -8,6 +8,7 @@ from Bio import AlignIO
 import copy
 from Bio.Phylo import BaseTree
 from Bio.Align import MultipleSeqAlignment
+import sys
 #"home/sileadim/workspace/Praktikum2/praktikum2.fasta"
 
 
@@ -122,7 +123,7 @@ def upgma(distance_matrix):
 
 
 if __name__ == "__main__":
-    filename = "praktikum2.fasta.txt"   
+    filename = sys.argv[1]   
     alnName = makeMSA(filename)
     dm = makeDistanceMatrix(alnName)
     print upgma(dm)
